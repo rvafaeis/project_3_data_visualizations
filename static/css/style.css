@@ -1,0 +1,17 @@
+.svgContainer {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+  }
+  
+  .hcContainer {
+    display: flex;
+    align-items: left;
+    gap: 10px;
+  }
+  
+  .hcContainer2 {
+    display: flex;
+    align-items: bottom;
+    gap: 10px;
+  }
