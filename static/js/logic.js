@@ -11,33 +11,34 @@ url = 'http://127.0.0.1:5000/api/v1.0/data'
 // let url = "../../Resources/CleanData.csv";
 
 // set the dimensions and margins of the graph
-var margin = { top: 30, right: 30, bottom: 200, left: 100 },
-  width = 700 - margin.left - margin.right,
-  height = 700 - margin.top - margin.bottom;
+
 let data = {};
 let boroughList = [];
 let boroughSelect = d3.select("#boroughSelect");
 
-// append the svg object to the body of the page
-var svg = d3
-  .select("#svg")
-  .append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-// append the svg object to the body of the page
-var svg2 = d3
-  .select("#svg2")
-  .append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+
+data_api=[]
 // Parse the Data
+
+
+// create an accumulator for the boroughs
+
+var BROOKLYN =0
+var BRONX =0
+var MANHATTAN = 0
+var QUEENS = 0
+var STATENISLAND = 0
+
+
+var BROOKLYN1 =0
+var BRONX1 =0
+var MANHATTAN1 = 0
+var QUEENS1 = 0
+var STATENISLAND1 = 0
 d3.json(url, function (generalData) {
     console.log(generalData);
+    data_api=generalData
   // selecting the boroughs from generalData
   generalData.BOROUGH.forEach((d) => {
     if (!boroughList.includes(d.BOROUGH)) {
@@ -53,123 +54,84 @@ d3.json(url, function (generalData) {
   data["BOROUGH"] = generalData.BOROUGH;
   data["PERSONS_KILLED"] = generalData["PERSONS KILLED"];
   data["PERSONS_INJURED"] = generalData["PERSONS INJURED"];
-//   for (let i = 0; i < generalData.length; i++) {
-//     const gD = generalData[i];
-//     console.log(generalData[i]);
 
-//     let existing = data.filter((d) => d.BOROUGH == gD.BOROUGH);
-//     if (existing.length > 0) {
-//       let d = existing[0];
-//       d.PERSONS_INJURED += Number(gD["PERSONS INJURED"]);
-//       d.PERSONS_KILLED += Number(gD["PERSONS KILLED"]);
-//     } else {
-//       data.push({
-//         BOROUGH: gD.BOROUGH,
-//         PERSONS_INJURED: Number(gD["PERSONS INJURED"]),
-//         PERSONS_KILLED: Number(gD["PERSONS KILLED"]),
-//       });
-//     }
-//   }
 
-  // X axis
-  var x = d3
-    .scaleBand()
-    .range([0, width])
-    .domain(
-      data.map(function (d) {
-        return d.BOROUGH;
-      })
-    )
-    .padding(0.2);
-  svg
-    .append("g")
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x))
-    .selectAll("text")
-    .attr("transform", "translate(-10,0)rotate(-45)")
-    .style("text-anchor", "end");
-  svg2
-    .append("g")
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x))
-    .selectAll("text")
-    .attr("transform", "translate(-10,0)rotate(-45)")
-    .style("text-anchor", "end");
+data_api=[]
+// Parse the Data
+d3.json(url, function (generalData) {
+  console.log(generalData);
+  data_api=generalData
+  // var borough =data_api.BOROUGH
 
-  // x axis label
-  svg
-    .append("text")
-    .text("BOROUGHS")
-    .attr("text-anchor", "middle")
-    .attr(
-      "transform",
-      `translate(${width / 2}, ${height + margin.bottom / 2})`
-    );
-  svg2
-    .append("text")
-    .text("BOROUGHS")
-    .attr("text-anchor", "middle")
-    .attr(
-      "transform",
-      `translate(${width / 2}, ${height + margin.bottom / 2})`
-    );
-  console.log(data);
+  for(var i = 0; i<data_api.BOROUGH.length; i++){
+    if(data_api.BOROUGH[i]==='BROOKLYN'){
+      BROOKLYN = BROOKLYN+ parseFloat(data_api["PERSONS INJURED"][i])
+    }
+    else if(data_api.BOROUGH[i] ==='BRONX'){
+      BRONX = BRONX+parseFloat(data_api["PERSONS INJURED"][i])
+    }
+    else if ( data_api.BOROUGH[i] ==='MANHATTAN') {
+      MANHATTAN = MANHATTAN+parseFloat(data_api["PERSONS INJURED"][i])
+    }
+    else if (data_api.BOROUGH[i] ==='QUEENS'){
+      QUEENS = QUEENS+parseFloat(data_api["PERSONS INJURED"][i])
+    }
+    else {STATENISLAND= STATENISLAND +parseFloat(data_api["PERSONS INJURED"][i])
+    }
+  }
 
-  // Add Y axis
-  var y = d3.scaleLinear().range([height, 0]).domain([0, 7000]);
-  svg.append("g").call(d3.axisLeft(y));
-  var y2 = d3.scaleLinear().range([height, 0]).domain([0, 25]);
-  svg2.append("g").call(d3.axisLeft(y2));
+var plotly_data = [
+  {
+    x: ['BROOKLYN', 'BRONX', 'MANHATTAN','QUEENS','STATENISLAND'],
+    y: [BROOKLYN, BRONX, MANHATTAN, QUEENS, STATENISLAND],
+    name: 'PERSONS INJURED',
+    type: 'bar'
+  }   
+];
 
-  // y axis label
-  svg
-    .append("text")
-    .text("PERSONS INJURED")
-    .attr("transform", "rotate(-90)")
-    .attr("text-anchor", "middle")
-    .attr("x", 0 - height / 2)
-    .attr("y", 0 - margin.left / 2);
-  svg2
-    .append("text")
-    .text("PERSONS KILLED")
-    .attr("transform", "rotate(-90)")
-    .attr("text-anchor", "middle")
-    .attr("x", 0 - height / 2)
-    .attr("y", 0 - margin.left / 2);
-console.log(data);
-  // Bars
-  svg
-    .selectAll("mybar")
-    .data(data)
-    .enter()
-    .append("rect")
-    .attr("x", function (d) {
-      return x(d.BOROUGH);
-    })
-    .attr("y", function (d) {
-      return y(d.PERSONS_INJURED);
-    })
-    .attr("width", x.bandwidth())
-    .attr("height", function (d) {
-      return height - y(d.PERSONS_INJURED);
-    })
-    .attr("fill", "#69b3a2");
-  svg2
-    .selectAll("mybar")
-    .data(data)
-    .enter()
-    .append("rect")
-    .attr("x", function (d) {
-      return x(d.BOROUGH);
-    })
-    .attr("y", function (d) {
-      return y2(d.PERSONS_KILLED);
-    })
-    .attr("width", x.bandwidth())
-    .attr("height", function (d) {
-      return height - y2(d.PERSONS_KILLED);
-    })
-    .attr("fill", "#69b3a2");
+var layout = {
+    xaxis: {title:{text:'Boroughs'}},
+    yaxis: {title:{text:'Persons Injured'}},}
+
+Plotly.newPlot('mydivplotly', plotly_data, layout);
+
+
+
+
+
+
+for(var i = 0; i<data_api.BOROUGH.length; i++){
+  if(data_api.BOROUGH[i]==='BROOKLYN'){
+    BROOKLYN1 = BROOKLYN1+ parseFloat(data_api["PERSONS KILLED"][i])
+  }
+  else if(data_api.BOROUGH[i] ==='BRONX'){
+    BRONX1 = BRONX1+parseFloat(data_api["PERSONS KILLED"][i])
+  }
+  else if ( data_api.BOROUGH[i] ==='MANHATTAN') {
+    MANHATTAN1 = MANHATTAN1+parseFloat(data_api["PERSONS KILLED"][i])
+  }
+  else if (data_api.BOROUGH[i] ==='QUEENS'){
+    QUEENS1 = QUEENS1+parseFloat(data_api["PERSONS KILLED"][i])
+  }
+  else {STATENISLAND1= STATENISLAND1 +parseFloat(data_api["PERSONS KILLED"][i])
+  }
+}
+
+
+var plotly_data1 = [
+  {
+    x: ['BROOKLYN', 'BRONX', 'MANHATTAN','QUEENS','STATENISLAND'],
+    y: [BROOKLYN1, BRONX1, MANHATTAN1, QUEENS1, STATENISLAND1],
+    name: 'PERSONS KILLED',
+    type: 'bar'
+  }   
+];
+
+var layout1 = {
+    xaxis: {title:{text:'Boroughs'}},
+    yaxis: {title:{text:'Persons Killed'}},}
+
+Plotly.newPlot('mydivplotly1', plotly_data1, layout1);
 
   // Pie Chart using Highcharts
   Highcharts.chart("container1", {
@@ -506,4 +468,4 @@ console.log(data);
   });
 });
 
-// });
+});
