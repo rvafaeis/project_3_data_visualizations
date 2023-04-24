@@ -1,5 +1,5 @@
 # New York City Vehicle Accidents Data Visualizations
-![image](https://user-images.githubusercontent.com/120426753/234058971-cea12fe5-ba62-46e8-82ce-dd6f1eeda425.png)
+![image](https://user-images.githubusercontent.com/120426753/234059064-712ff591-a390-4cf0-bda5-a1aed278c4d5.png)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### The aim of this project was to gather and analyze data from vehicle accidents in all five boroughs in New York City. This application was created to better understand vehicular accidents in New York City to identify areas of concern regarding the New York accident data obtained. 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
