@@ -8,13 +8,13 @@
 ### To start this project, the basic ETL data integration process was conducted. A raw dataset was extracted and downloaded as a .csv file from the NYC Open Data website. The data was then transformed and adjusted using the Python libaray Pandas to edit and clean the data. A new .csv file was created and imported into a new PostgreSQL database.
 
 ![image](https://user-images.githubusercontent.com/120426753/234062142-37cc36f8-d73d-4f5d-b1c7-4b8e7b3af4e3.png)
-### [Clean DataFrame Creation](https://github.com/rvafaeis/project_3_data_visualizations/blob/main/Step%201.ipynb)
+### [Cleaned DataFrame Code](https://github.com/rvafaeis/project_3_data_visualizations/blob/main/Step%201.ipynb)
 ### [Cleaned Data CSV File](https://github.com/rvafaeis/project_3_data_visualizations/blob/main/Resources/CleanData.csv)
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### After the PostgreSQL database was created, a Python flask application was created and used in order to load our data from the PostgreSQL database into our JavaScript files.
-### [Python Flask](https://github.com/rvafaeis/project_3_data_visualizations/blob/main/apps.py)
+### [Python Flask Code](https://github.com/rvafaeis/project_3_data_visualizations/blob/main/apps.py)
 ### []()
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
