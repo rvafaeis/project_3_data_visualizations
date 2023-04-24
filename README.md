@@ -18,11 +18,11 @@
 ### []()
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Creating an HTML page with data visualizations was the next step. The visualizations and contents of the HTML page were created using JavaScript libraries including D3, Leaflet, Plotly, and Highcharts. After formatting our CSS and HTML files, the final product was produced. 
+### Creating an HTML page with interactive data visualizations was the next step. The visualizations and contents of the HTML page were created using JavaScript libraries including D3, Leaflet, Plotly, and Highcharts. After formatting our CSS and HTML files, the final product was produced. 
 ### [JavaScript Main Code](https://github.com/rvafaeis/project_3_data_visualizations/blob/main/static/js/logic.js)
 ### [HTML Code](https://github.com/rvafaeis/project_3_data_visualizations/blob/main/templates/index.html)
 
-### The visualizations include:
+### The interactive visualizations include:
 ####   1. A heatmap showing hotspots of accidents located in New York City.
 ![image](https://user-images.githubusercontent.com/120426753/234131741-caf25094-3c6f-4a96-b917-81709f4d1fde.png)
 
