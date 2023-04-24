@@ -1,6 +1,7 @@
 # New York City Vehicle Accidents Data Visualizations
+https://nypost.com/wp-content/uploads/sites/2/2021/08/bike-crash-03.jpg?quality=90&strip=all&w=1024
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### This projects aim is to gather and analyze data from vehicle accidents in all five boroughs in New York City. This application was created to better understand vehicular accidents in New York City to identify areas of concern regarding the New York accident data obtained. 
+### The aim of this project was to gather and analyze data from vehicle accidents in all five boroughs in New York City. This application was created to better understand vehicular accidents in New York City to identify areas of concern regarding the New York accident data obtained. 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### To start this project, the basic ETL data integration process was conducted. A raw dataset was extracted and downloaded as a .csv file from the NYC Open Data website. The data was then transformed and adjusted using the Python libaray Pandas to edit and clean the data. A new .csv file was created and imported into a new PostgreSQL database.  
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
