@@ -13,13 +13,13 @@
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Creating an HTML page with data visualizations was the next step. The visualizations and contents of the HTML page were created using JavaScript libraries including D3, Leaflet, Plotly, and Highcharts. After formatting our CSS and HTML files, the final product was produced. The visualizations include:
-    1. A heatmap showing hotspots of accidents located in New York City
-    2. Bar graphs detailing:
-       a. The amount of people killed and injured from accidents in New York City per borough.
-       b. The amount of accidents caused by each vehicle type.
-       c. The amount of accidents caused by each casue/accident factor. 
-    3. Pie graphs detailing:
-       a. Percentage and amount of vehicle crashes per borough.
-       b. Percentage and amount of vehicle crashes per month.
+####   1. A heatmap showing hotspots of accidents located in New York City
+####   2. Bar graphs detailing:
+####       a. The amount of people killed and injured from accidents in New York City per borough.
+####       b. The amount of accidents caused by each vehicle type.
+####       c. The amount of accidents caused by each casue/accident factor. 
+####    3. Pie graphs detailing:
+####       a. Percentage and amount of vehicle crashes per borough.
+####       b. Percentage and amount of vehicle crashes per month.
 
 
