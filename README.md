@@ -23,10 +23,10 @@
 ### [HTML Code](https://github.com/rvafaeis/project_3_data_visualizations/blob/main/templates/index.html)
 
 ### The visualizations include:
-####   1. A heatmap showing hotspots of accidents located in New York City
+####   1. A heatmap showing hotspots of accidents located in New York City.
 ![image](https://user-images.githubusercontent.com/120426753/234131741-caf25094-3c6f-4a96-b917-81709f4d1fde.png)
 
-####   2. Bar graphs detailing:
+####   2. Bar graphs:
 #####     - The amount of people killed and injured from accidents in New York City per borough.
 ![image](https://user-images.githubusercontent.com/120426753/234131797-9493faca-f303-405e-a728-8e92786f0b4e.png)
 
@@ -36,7 +36,7 @@
 #####     - The amount of accidents caused by each casue/accident factor. 
 ![image](https://user-images.githubusercontent.com/120426753/234133520-f7529f4d-9226-48c9-a54c-b29121a27d49.png)
 
-####    3. Pie graphs detailing:
+####    3. Pie graphs:
 #####      - Percentage and amount of vehicle crashes per borough.
 ![image](https://user-images.githubusercontent.com/120426753/234133744-b3daa974-e140-4902-b056-dd1af2b725c4.png)
 
