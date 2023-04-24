@@ -1,5 +1,5 @@
 # New York City Vehicle Accidents Data Visualizations
-https://nypost.com/wp-content/uploads/sites/2/2021/08/bike-crash-03.jpg?quality=90&strip=all&w=1024
+![image](https://user-images.githubusercontent.com/120426753/234058532-19edd15b-d09a-4cd8-b65f-db75bd677fba.png)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### The aim of this project was to gather and analyze data from vehicle accidents in all five boroughs in New York City. This application was created to better understand vehicular accidents in New York City to identify areas of concern regarding the New York accident data obtained. 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
