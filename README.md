@@ -16,7 +16,7 @@
 ####   1. A heatmap showing hotspots of accidents located in New York City
 ####   2. Bar graphs detailing:
 #####     - The amount of people killed and injured from accidents in New York City per borough.
-#####     - The amount of accidents caused by each vehicle type.
+#####      - The amount of accidents caused by each vehicle type.
 #####     - The amount of accidents caused by each casue/accident factor. 
 ####    3. Pie graphs detailing:
 #####      - Percentage and amount of vehicle crashes per borough.
